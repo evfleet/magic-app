@@ -1,4 +1,5 @@
 import React from "react";
+import { hot } from 'react-hot-loader';
 
 const App: React.SFC<{}> = (): React.ReactElement => {
   return (
@@ -8,4 +9,4 @@ const App: React.SFC<{}> = (): React.ReactElement => {
   );
 };
 
-export default App;
+export default hot(module)(App)
