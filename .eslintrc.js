@@ -13,7 +13,9 @@ module.exports = {
       jsx: true
     }
   },
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-var-requires": false
+  },
   settings: {
     react: {
       version: "detect"
