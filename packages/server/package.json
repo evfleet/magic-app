@@ -1,11 +1,9 @@
 {
-  "name": "@magic-app/web",
+  "name": "@magic-app/server",
   "version": "1.0.0",
-  "description": "> TODO: description",
   "author": "Evan Fleet <evfleet@gmail.com>",
-  "homepage": "",
   "license": "ISC",
-  "main": "lib/web.js",
+  "main": "lib/server.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
