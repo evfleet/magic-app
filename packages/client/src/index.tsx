@@ -1,6 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
 
-import Root from "./components/Root";
+import Root from "./screens/Root";
+import theme from "./styles/theme";
+import { ThemeProvider } from "./styles/themed-styled";
 
-render(<Root />, document.getElementById("root"));
+render(
+  <ThemeProvider theme={theme}>
+    <Root />
+  </ThemeProvider>,
+  document.getElementById("root")
+);

@@ -1,10 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 const HTMLPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development', 
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   devtool: "source-map",
   entry: {
     index: [
@@ -22,11 +22,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
+        test: /\.(ts|tsx)?$/,
+        loader: "babel-loader",
         options: {
-          configFileName: path.resolve(__dirname, './tsconfig.json')
+          presets: [
+            "@babel/react",
+            "@babel/typescript",
+            ["@babel/env", { modules: false }]
+          ],
+          plugins: ["babel-plugin-styled-components"]
         }
+      },
+      {
+        test: /\.js$/,
+        use: ["source-map-loader"],
+        enforce: "pre"
       }
     ]
   },
