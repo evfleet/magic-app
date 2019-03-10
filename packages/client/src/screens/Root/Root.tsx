@@ -1,17 +1,13 @@
 import React from "react";
 import { hot } from "react-hot-loader";
 
-import styled from "../../styles/themed-styled";
-
-const Container = styled.div`
-  background: ${({ theme }) => theme.colors.background};
-`;
+import Layout from "../../components/Layout";
 
 const Root: React.SFC<{}> = (): React.ReactElement => {
   return (
-    <Container>
+    <Layout>
       <p>Hello World</p>
-    </Container>
+    </Layout>
   );
 };
 

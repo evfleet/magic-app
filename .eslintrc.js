@@ -14,7 +14,8 @@ module.exports = {
     }
   },
   rules: {
-    "@typescript-eslint/no-var-requires": false
+    "@typescript-eslint/no-var-requires": false,
+    "react/prop-types": false
   },
   settings: {
     react: {

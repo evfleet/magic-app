@@ -25,12 +25,7 @@ module.exports = {
         test: /\.(ts|tsx)?$/,
         loader: "babel-loader",
         options: {
-          presets: [
-            "@babel/react",
-            "@babel/typescript",
-            ["@babel/env", { modules: false }]
-          ],
-          plugins: ["babel-plugin-styled-components"]
+          configFile: "../../babel.config.js"
         }
       },
       {
