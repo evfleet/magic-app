@@ -5,6 +5,8 @@ services:
     volumes:
       - .:/usr/code
       - /usr/code/node_modules/
-    ports:
-      - 3000:3000
+    ports: 
+      - "3000:3000"
+    environment:
+      - VIRTUAL_HOST=magic.localhost
     command: yarn run dev
