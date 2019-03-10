@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
-
 const HTMLPlugin = require("html-webpack-plugin");
+const CleanPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
@@ -44,9 +44,10 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".jsx"]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new CleanPlugin(),
     new HTMLPlugin({
       template: path.resolve(__dirname, "./src/index.html")
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
