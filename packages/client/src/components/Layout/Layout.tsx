@@ -1,17 +1,16 @@
 import React from "react";
 
+import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 const Layout: React.SFC<{}> = ({ children }): React.ReactElement => {
   return (
-    <div>
+    <React.Fragment>
       <Header />
-
-      <div>{children}</div>
-
+      <Content>{children}</Content>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 

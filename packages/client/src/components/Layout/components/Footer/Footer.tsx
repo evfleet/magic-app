@@ -1,10 +1,12 @@
 import React from "react";
 
+import { Container } from "./styles";
+
 const Footer: React.SFC<{}> = (): React.ReactElement => {
   return (
-    <footer>
+    <Container>
       <p>Hello</p>
-    </footer>
+    </Container>
   );
 };
 
