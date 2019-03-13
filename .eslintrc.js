@@ -17,6 +17,7 @@ module.exports =  {
   rules:  {
     "@typescript-eslint/no-explicit-any": false,
     "@typescript-eslint/explicit-member-accessibility": false,
+    "@typescript-eslint/no-empty-interface": false,
     "import/no-unresolved": false,
     "import/prefer-default-export": false,
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }]
