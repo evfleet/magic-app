@@ -1,7 +1,7 @@
 import next from 'next';
 import express from 'express';
 
-const port = process.env.PORT || 3000;
+const port = process.env.APP_PORT;
 const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({ dev });
