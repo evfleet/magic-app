@@ -15,6 +15,7 @@ module.exports =  {
     },
   },
   rules:  {
+    "@typescript-eslint/no-explicit-any": false,
     "@typescript-eslint/explicit-member-accessibility": false,
     "import/no-unresolved": false,
     "import/prefer-default-export": false,
