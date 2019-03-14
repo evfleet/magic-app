@@ -4,17 +4,17 @@ import { ServerStyleSheet } from 'styled-components';
 import Document, { NextDocumentContext } from 'next/document';
 
 class CustomDocument extends Document {
-  static async getInitialProps(context: NextDocumentContext) {
+  static async getInitialProps(ctx: NextDocumentContext) {
     const sheet = new ServerStyleSheet();
-    const originalPage = context.renderPage;
+    const originalPage = ctx.renderPage;
 
     try {
-      context.renderPage = () =>
+      ctx.renderPage = () =>
         originalPage({
           enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
         });
 
-      const initialProps = await Document.getInitialProps(context);
+      const initialProps = await Document.getInitialProps(ctx);
 
       return {
         ...initialProps,

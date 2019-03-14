@@ -20,6 +20,7 @@ module.exports =  {
     "@typescript-eslint/no-empty-interface": false,
     "import/no-unresolved": false,
     "import/prefer-default-export": false,
+    "react/prop-types": false,
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }]
   },
   settings:  {

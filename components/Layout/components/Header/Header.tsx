@@ -1,12 +1,16 @@
 import React from 'react';
 
+import { Container, Wrapper } from './styles';
+
 interface HeaderProps {}
 
 const Header: React.SFC<HeaderProps> = (): React.ReactElement => {
   return (
-    <div>
-      <header>Header</header>
-    </div>
+    <Wrapper>
+      <Container>
+        <header>Header</header>
+      </Container>
+    </Wrapper>
   );
 };
 

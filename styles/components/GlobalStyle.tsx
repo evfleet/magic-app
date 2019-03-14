@@ -1,4 +1,4 @@
-import { createGlobalStyle } from '../../themed-styled';
+import { createGlobalStyle } from '../themed-styled';
 
 const GlobalStyle = createGlobalStyle`
 `;

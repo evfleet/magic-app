@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { Container, Wrapper } from './styles';
+
 interface ContentProps {}
 
-const Content: React.SFC<ContentProps> = (): React.ReactElement => {
+const Content: React.SFC<ContentProps> = ({ children }): React.ReactElement => {
   return (
-    <div>
-      <p>Content</p>
-    </div>
+    <Wrapper>
+      <Container>{children}</Container>
+    </Wrapper>
   );
 };
 

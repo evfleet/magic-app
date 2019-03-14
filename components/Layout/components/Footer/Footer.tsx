@@ -1,12 +1,16 @@
 import React from 'react';
 
+import { Container, Wrapper } from './styles';
+
 interface FooterProps {}
 
 const Footer: React.SFC<FooterProps> = (): React.ReactElement => {
   return (
-    <div>
-      <footer>Footer</footer>
-    </div>
+    <Wrapper>
+      <Container>
+        <footer>Footer</footer>
+      </Container>
+    </Wrapper>
   );
 };
 
