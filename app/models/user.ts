@@ -1,25 +1,13 @@
-import Sequelize from 'sequelize';
+import { Document, Model, model, Schema } from 'mongoose';
 
-import { SequelizeAttributes } from '../types/SequelizeAttributes';
-
-export interface UserAttributes {
-  id?: number;
-  email: string;
+interface UserAttributes {
+  id?: any;
 }
 
-export interface UserInstance extends Sequelize.Instance<UserAttributes>, UserAttributes {}
+interface UserDocument extends UserAttributes, Document {}
 
-export const UserFactory = (
-  sequelize: Sequelize.Sequelize,
-  DataTypes: Sequelize.DataTypes
-): Sequelize.Model<UserInstance, UserAttributes> => {
-  const attributes: SequelizeAttributes<UserAttributes> = {
-    email: {
-      type: DataTypes.STRING
-    }
-  };
+interface UserModel extends Model<UserDocument> {}
 
-  const User = sequelize.define<UserInstance, UserAttributes>('User', attributes);
+const userSchema: Schema = new Schema({});
 
-  return User;
-};
+export const User = model<UserDocument, UserModel>('User', userSchema);

@@ -1,20 +1,13 @@
-import Sequelize from 'sequelize';
+import { Document, Model, model, Schema } from 'mongoose';
 
-import { SequelizeAttributes } from '../types/SequelizeAttributes';
-
-export interface DeckAttributes {
-  id?: number;
+interface DeckAttributes {
+  id?: any;
 }
 
-export interface DeckInstance extends Sequelize.Instance<DeckAttributes>, DeckAttributes {}
+interface DeckDocument extends DeckAttributes, Document {}
 
-export const DeckFactory = (
-  sequelize: Sequelize.Sequelize,
-  DataTypes: Sequelize.DataTypes
-): Sequelize.Model<DeckInstance, DeckAttributes> => {
-  const attributes: SequelizeAttributes<DeckAttributes> = {};
+interface DeckModel extends Model<DeckDocument> {}
 
-  const Deck = sequelize.define<DeckInstance, DeckAttributes>('Deck', attributes);
+const deckSchema: Schema = new Schema({});
 
-  return Deck;
-};
+export const Deck = model<DeckDocument, DeckModel>('Deck', deckSchema);

@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import next from 'next';
 import express from 'express';
-
-import { createModels } from './models';
+import mongoose from 'mongoose';
 
 const port = process.env.APP_PORT;
 const dev = process.env.NODE_ENV !== 'production';
@@ -12,10 +11,9 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(async () => {
   try {
-    const server = express();
-    const database = createModels();
+    await mongoose.connect('mongodb://mongo:27017/app', { useNewUrlParser: true });
 
-    await database.sequelize.sync();
+    const server = express();
 
     server.get('*', (req, res) => {
       return handle(req, res);

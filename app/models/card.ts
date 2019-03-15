@@ -1,20 +1,13 @@
-import Sequelize from 'sequelize';
+import { Document, Model, model, Schema } from 'mongoose';
 
-import { SequelizeAttributes } from '../types/SequelizeAttributes';
-
-export interface CardAttributes {
-  id?: number;
+interface CardAttributes {
+  id?: any;
 }
 
-export interface CardInstance extends Sequelize.Instance<CardAttributes>, CardAttributes {}
+interface CardDocument extends CardAttributes, Document {}
 
-export const CardFactory = (
-  sequelize: Sequelize.Sequelize,
-  DataTypes: Sequelize.DataTypes
-): Sequelize.Model<CardInstance, CardAttributes> => {
-  const attributes: SequelizeAttributes<CardAttributes> = {};
+interface CardModel extends Model<CardDocument> {}
 
-  const Card = sequelize.define<CardInstance, CardAttributes>('Card', attributes);
+const cardSchema: Schema = new Schema({});
 
-  return Card;
-};
+export const Card = model<CardDocument, CardModel>('Card', cardSchema);
