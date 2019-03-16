@@ -2,6 +2,9 @@
 import next from 'next';
 import express from 'express';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+
+import authRoutes from './routes/auth';
 
 const port = process.env.APP_PORT;
 const dev = process.env.NODE_ENV !== 'production';
@@ -14,6 +17,10 @@ app.prepare().then(async () => {
     await mongoose.connect('mongodb://mongo:27017/app', { useNewUrlParser: true });
 
     const server = express();
+
+    server.use(bodyParser.json());
+
+    server.use('/auth', authRoutes);
 
     server.get('*', (req, res) => {
       return handle(req, res);
