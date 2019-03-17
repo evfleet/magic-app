@@ -1,7 +1,7 @@
 import argon2 from 'argon2';
 import { Document, Model, model, Schema } from 'mongoose';
 
-import isEmail from '../../utils/isEmail';
+import { isEmail } from '../../utils';
 
 export interface UserAttributes {
   id?: any;
